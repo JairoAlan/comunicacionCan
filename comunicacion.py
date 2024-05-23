@@ -14,7 +14,6 @@ async def datosGraficar():
     writer.write(("AT+PARAMETER=7,7,1,4\r\n").encode())
     await writer.drain()
     global df
-    
     while True:
         data = await reader.read(400)
         await asyncio.sleep(0.8)
@@ -36,7 +35,7 @@ async def datosGraficar():
                     print(df)
                 else:
                     print("Datos incompletos recibidos:", lista)
-    
+   
     
    
 async def main():
